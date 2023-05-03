@@ -7,5 +7,7 @@
 /spec/reports/
 /tmp/
 
+rulers-0.0.1.gem
+
 # rspec failure tracking
 .rspec_status
