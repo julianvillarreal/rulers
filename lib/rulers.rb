@@ -11,6 +11,10 @@ module Rulers
         return [404, {'Content-Type' => 'text/html'}, []]
       end
 
+      if env['PATH_INFO'] == '/'
+        env['PATH_INFO'] = '/home/index'
+      end
+
       klass, act = get_controller_and_action(env)
       controller = klass.new(env)
       begin
