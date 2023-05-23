@@ -15,8 +15,8 @@ module Rulers
       controller = klass.new(env)
       begin
         text = controller.send(act)
-      rescue StandardError
-        return [500, {'Content-Type' => 'text/html'}, []]
+      rescue StandardError => e
+        return [500, {'Content-Type' => 'text/html'}, [e]]
       end
 
       [200, {'Content-Type' => 'text/html'}, [text]]
